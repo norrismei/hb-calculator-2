@@ -16,6 +16,9 @@ def main():
         elif tokens[0] == "*":
             answer = multiply(int(tokens[1]), int(tokens[2]))
             print(answer)
+        elif tokens[0] == "/":
+            answer = divide(int(tokens[1]), int(tokens[2]))
+            print(answer)
 
 main()
 
