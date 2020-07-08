@@ -22,6 +22,9 @@ def main():
         elif tokens[0] == "square":
             answer = square(int(tokens[1]))
             print(answer)
+        elif tokens[0] == "cube":
+            answer = cube(int(tokens[1]))
+            print(answer)
 
 main()
 
