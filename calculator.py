@@ -19,6 +19,9 @@ def main():
         elif tokens[0] == "/":
             answer = divide(int(tokens[1]), int(tokens[2]))
             print(answer)
+        elif tokens[0] == "square":
+            answer = square(int(tokens[1]))
+            print(answer)
 
 main()
 
