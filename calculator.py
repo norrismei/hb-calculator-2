@@ -10,22 +10,29 @@ def main():
         if tokens[0] == "q":
             break
         operator, *nums = tokens
+        try:
+            num_floats = []
+            for num in nums:
+                num_floats.append(float(num))
+        except:
+            print("Your operands are not valid. Please enter numbers.")
+            continue
         if operator == "+":
-            answer = add(float(tokens[1]), float(tokens[2]))
+            answer = add(num_floats[0], num_floats[1])
         elif operator == "-":
-            answer = subtract(float(tokens[1]), float(tokens[2]))
+            answer = subtract(num_floats[0], num_floats[1])
         elif operator == "*":
-            answer = multiply(float(tokens[1]), float(tokens[2]))
+            answer = multiply(num_floats[0], num_floats[1])
         elif operator == "/":
-            answer = divide(float(tokens[1]), float(tokens[2]))
+            answer = divide(num_floats[0], num_floats[1])
         elif operator == "square":
-            answer = square(float(tokens[1]))
+            answer = square(num_floats[0])
         elif operator == "cube":
-            answer = cube(float(tokens[1]))
+            answer = cube(num_floats[0])
         elif operator == "pow":
-            answer = power(float(tokens[1]), float(tokens[2]))
+            answer = power(num_floats[0], num_floats[1])
         elif operator == "mod":
-            answer = mod(float(tokens[1]), float(tokens[2]))
+            answer = mod(num_floats[0], num_floats[1])
         else: #If operator doesn't match any of the above, then it's invalid.
             print("That's not a valid operator. Try again.")
             continue
