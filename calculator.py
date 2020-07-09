@@ -7,33 +7,37 @@ def main():
     while True:
         input_string = input()
         tokens = input_string.split()
-        if tokens[0] == "+":
-            answer = add(int(tokens[1]), int(tokens[2]))
+        if tokens[0] == "q":
+            break
+        operator, *nums = tokens
+        if operator == "+":
+            answer = add(float(tokens[1]), float(tokens[2]))
+        elif operator == "-":
+            answer = subtract(float(tokens[1]), float(tokens[2]))
             print(answer)
-        elif tokens[0] == "-":
-            answer = subtract(int(tokens[1]), int(tokens[2]))
+        elif operator == "*":
+            answer = multiply(float(tokens[1]), float(tokens[2]))
             print(answer)
-        elif tokens[0] == "*":
-            answer = multiply(int(tokens[1]), int(tokens[2]))
+        elif operator == "/":
+            answer = divide(float(tokens[1]), float(tokens[2]))
             print(answer)
-        elif tokens[0] == "/":
-            answer = divide(int(tokens[1]), int(tokens[2]))
+        elif operator == "square":
+            answer = square(float(tokens[1]))
             print(answer)
-        elif tokens[0] == "square":
-            answer = square(int(tokens[1]))
+        elif operator == "cube":
+            answer = cube(float(tokens[1]))
             print(answer)
-        elif tokens[0] == "cube":
-            answer = cube(int(tokens[1]))
+        elif operator == "pow":
+            answer = power(float(tokens[1]), float(tokens[2]))
             print(answer)
-        elif tokens[0] == "pow":
-            answer = power(int(tokens[1]), int(tokens[2]))
+        elif operator == "mod":
+            answer = mod(float(tokens[1]), float(tokens[2]))
             print(answer)
-        elif tokens[0] == "mod":
-            answer = mod(int(tokens[1]), int(tokens[2]))
-            print(answer)
-        elif tokens[0] == "q":
-            return
-            
+        else:
+            print("That's not a valid operator. Try again.")
+            continue
+        print(answer)
+
 main()
 
 # Replace this with your code
